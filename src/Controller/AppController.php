@@ -66,14 +66,14 @@ class AppController extends Controller
     }
 
 
-  /*  public function beforeRender($event){
+    public function beforeRender($event){
        //LOGIN CHECK
        if($this->getRequest()->getSession()->read('Auth.User')){
          $this->set('loggedIn',true);
        } else{
          $this->set('loggedIn',false);
        }
-     }*/
+     }
 
 
 }

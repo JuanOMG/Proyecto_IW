@@ -49,7 +49,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
           <img src="https://seeklogo.com/images/M/movie-time-cinema-logo-8B5BE91828-seeklogo.com.png">
         </div>
         <div class="top-nav-links">
-          <//?php if($loggedIn):?>
+          <?php if($loggedIn):?>
             <?= $this->Html->link('Categorias',['controller' => 'users','action' => 'navCategoria']);?>
             <?= $this->Html->link('Peliculas',['controller' => 'users','action' => 'navPelicula']);?>
             <?= $this->Html->link('Salas',['controller' => 'users','action' => 'navSala']);?>
@@ -57,9 +57,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <?= $this->Html->link('Funciones',['controller' => 'users','action' => 'navFuncion']);?>
 
             <?= $this->Html->link('Logout',['controller' => 'users','action' => 'logout']);?>
-          <//?php else :?>
+          <?php else :?>
               <?= $this->Html->link('Register',['controller' => 'users','action' => 'register']);?>
-            <//?php endif;?>
+            <?php endif;?>
 
         </div>
     </nav>
