@@ -23,7 +23,7 @@
                 <tr>
                     <td><?= $this->Number->format($funcion->id) ?></td>
                     <td><?= $funcion->has('pelicula') ? $this->Html->link($funcion->pelicula->id, ['controller' => 'Pelicula', 'action' => 'view', $funcion->pelicula->id]) : '' ?></td>
-                    <td><?= $funcion->has('sala') ? $this->Html->link($funcion->sala->numero_sala, ['controller' => 'Sala', 'action' => 'view', $funcion->sala->numero_sala]) : '' ?></td>
+                    <td><?= $funcion->has('sala') ? $this->Html->link($funcion->sala->id, ['controller' => 'Sala', 'action' => 'view', $funcion->sala->id]) : '' ?></td>
                     <td><?= $funcion->has('horario') ? $this->Html->link($funcion->horario->id, ['controller' => 'Horario', 'action' => 'view', $funcion->horario->id]) : '' ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $funcion->id]) ?>

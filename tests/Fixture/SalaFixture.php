@@ -25,9 +25,8 @@ class SalaFixture extends TestFixture
     {
         $this->records = [
             [
-                'numero_sala' => 1,
-                'total_asientos' => 1,
-                'asientos_ocupados' => 1,
+                'id' => 1,
+                'asientos' => 1,
             ],
         ];
         parent::init();

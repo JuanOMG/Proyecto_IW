@@ -24,7 +24,7 @@
                 </tr>
                 <tr>
                     <th><?= __('Sala') ?></th>
-                    <td><?= $funcion->has('sala') ? $this->Html->link($funcion->sala->numero_sala, ['controller' => 'Sala', 'action' => 'view', $funcion->sala->numero_sala]) : '' ?></td>
+                    <td><?= $funcion->has('sala') ? $this->Html->link($funcion->sala->id, ['controller' => 'Sala', 'action' => 'view', $funcion->sala->id]) : '' ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Horario') ?></th>

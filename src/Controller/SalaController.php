@@ -33,7 +33,7 @@ class SalaController extends AppController
     public function view($id = null)
     {
         $sala = $this->Sala->get($id, [
-            'contain' => ['Funcion'],
+            'contain' => [],
         ]);
 
         $this->set(compact('sala'));

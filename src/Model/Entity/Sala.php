@@ -8,11 +8,8 @@ use Cake\ORM\Entity;
 /**
  * Sala Entity
  *
- * @property int $numero_sala
- * @property int $total_asientos
- * @property int $asientos_ocupados
- *
- * @property \App\Model\Entity\Funcion[] $funcion
+ * @property int $id
+ * @property int $asientos
  */
 class Sala extends Entity
 {
@@ -26,8 +23,6 @@ class Sala extends Entity
      * @var array<string, bool>
      */
     protected $_accessible = [
-        'total_asientos' => true,
-        'asientos_ocupados' => true,
-        'funcion' => true,
+        'asientos' => true,
     ];
 }

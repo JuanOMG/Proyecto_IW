@@ -11,8 +11,6 @@ use Cake\Validation\Validator;
 /**
  * Sala Model
  *
- * @property \App\Model\Table\FuncionTable&\Cake\ORM\Association\HasMany $Funcion
- *
  * @method \App\Model\Entity\Sala newEmptyEntity()
  * @method \App\Model\Entity\Sala newEntity(array $data, array $options = [])
  * @method \App\Model\Entity\Sala[] newEntities(array $data, array $options = [])
@@ -40,12 +38,8 @@ class SalaTable extends Table
         parent::initialize($config);
 
         $this->setTable('sala');
-        $this->setDisplayField('numero_sala');
-        $this->setPrimaryKey('numero_sala');
-
-        $this->hasMany('Funcion', [
-            'foreignKey' => 'sala_id',
-        ]);
+        $this->setDisplayField('id');
+        $this->setPrimaryKey('id');
     }
 
     /**
@@ -57,14 +51,9 @@ class SalaTable extends Table
     public function validationDefault(Validator $validator): Validator
     {
         $validator
-            ->integer('total_asientos')
-            ->requirePresence('total_asientos', 'create')
-            ->notEmptyString('total_asientos');
-
-        $validator
-            ->integer('asientos_ocupados')
-            ->requirePresence('asientos_ocupados', 'create')
-            ->notEmptyString('asientos_ocupados');
+            ->integer('asientos')
+            ->requirePresence('asientos', 'create')
+            ->notEmptyString('asientos');
 
         return $validator;
     }

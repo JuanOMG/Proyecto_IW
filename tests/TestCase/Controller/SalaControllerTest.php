@@ -23,7 +23,6 @@ class SalaControllerTest extends TestCase
      */
     protected $fixtures = [
         'app.Sala',
-        'app.Funcion',
     ];
 
     /**

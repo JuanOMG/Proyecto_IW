@@ -17,8 +17,7 @@
             <fieldset>
                 <legend><?= __('Add Sala') ?></legend>
                 <?php
-                    echo $this->Form->control('total_asientos');
-                    echo $this->Form->control('asientos_ocupados');
+                    echo $this->Form->control('asientos');
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

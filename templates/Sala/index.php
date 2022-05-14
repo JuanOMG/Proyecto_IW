@@ -11,22 +11,20 @@
         <table>
             <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('numero_sala') ?></th>
-                    <th><?= $this->Paginator->sort('total_asientos') ?></th>
-                    <th><?= $this->Paginator->sort('asientos_ocupados') ?></th>
+                    <th><?= $this->Paginator->sort('id') ?></th>
+                    <th><?= $this->Paginator->sort('asientos') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($sala as $sala): ?>
                 <tr>
-                    <td><?= $this->Number->format($sala->numero_sala) ?></td>
-                    <td><?= $this->Number->format($sala->total_asientos) ?></td>
-                    <td><?= $this->Number->format($sala->asientos_ocupados) ?></td>
+                    <td><?= $this->Number->format($sala->id) ?></td>
+                    <td><?= $this->Number->format($sala->asientos) ?></td>
                     <td class="actions">
-                        <?= $this->Html->link(__('View'), ['action' => 'view', $sala->numero_sala]) ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $sala->numero_sala]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $sala->numero_sala], ['confirm' => __('Are you sure you want to delete # {0}?', $sala->numero_sala)]) ?>
+                        <?= $this->Html->link(__('View'), ['action' => 'view', $sala->id]) ?>
+                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $sala->id]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $sala->id], ['confirm' => __('Are you sure you want to delete # {0}?', $sala->id)]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>
