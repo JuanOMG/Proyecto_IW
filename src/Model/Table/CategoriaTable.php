@@ -51,7 +51,8 @@ class CategoriaTable extends Table
     public function validationDefault(Validator $validator): Validator
     {
         $validator
-            ->integer('nombre')
+            ->scalar('nombre')
+            ->maxLength('nombre', 50)
             ->requirePresence('nombre', 'create')
             ->notEmptyString('nombre');
 

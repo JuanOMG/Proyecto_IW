@@ -19,12 +19,12 @@
             <h3><?= h($categorium->id) ?></h3>
             <table>
                 <tr>
-                    <th><?= __('Id') ?></th>
-                    <td><?= $this->Number->format($categorium->id) ?></td>
+                    <th><?= __('Nombre') ?></th>
+                    <td><?= h($categorium->nombre) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Nombre') ?></th>
-                    <td><?= $this->Number->format($categorium->nombre) ?></td>
+                    <th><?= __('Id') ?></th>
+                    <td><?= $this->Number->format($categorium->id) ?></td>
                 </tr>
             </table>
         </div>

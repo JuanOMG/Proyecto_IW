@@ -20,7 +20,7 @@
                 <?php foreach ($categoria as $categorium): ?>
                 <tr>
                     <td><?= $this->Number->format($categorium->id) ?></td>
-                    <td><?= $this->Number->format($categorium->nombre) ?></td>
+                    <td><?= h($categorium->nombre) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $categorium->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $categorium->id]) ?>

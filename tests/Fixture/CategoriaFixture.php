@@ -26,7 +26,7 @@ class CategoriaFixture extends TestFixture
         $this->records = [
             [
                 'id' => 1,
-                'nombre' => 1,
+                'nombre' => 'Lorem ipsum dolor sit amet',
             ],
         ];
         parent::init();

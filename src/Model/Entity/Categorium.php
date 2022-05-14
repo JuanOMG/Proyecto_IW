@@ -9,7 +9,7 @@ use Cake\ORM\Entity;
  * Categorium Entity
  *
  * @property int $id
- * @property int $nombre
+ * @property string $nombre
  */
 class Categorium extends Entity
 {
