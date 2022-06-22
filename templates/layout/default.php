@@ -48,6 +48,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <?= $this->Html->link('Salas',['controller' => 'users','action' => 'navSala']);?>
             <?= $this->Html->link('Horarios',['controller' => 'users','action' => 'navHorario']);?>
             <?= $this->Html->link('Funciones',['controller' => 'users','action' => 'navFuncion']);?>
+            <?= $this->Html->link('Premios',['controller' => 'users','action' => 'navPremio']);?>
 
             <?= $this->Html->link('Logout',['controller' => 'users','action' => 'logout']);?>
           <?php else :?>

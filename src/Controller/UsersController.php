@@ -166,4 +166,8 @@ class UsersController extends AppController
       return  $this->redirect(['controller' => 'funcion']);
     }
 
+    public function navPremio(){
+      return  $this->redirect(['controller' => 'premios']);
+    }
+
 }
