@@ -109,8 +109,10 @@ class UsersController extends AppController
         $user = $this->Auth->identify();
         if($user){
           $this->Auth->setUser($user);
-          $this->Flash->error('Login correcto');
-          return $this->redirect(['controller' => 'funcion']);
+          $userID = $this->Auth->user('id');//
+          $_SESSION['userID'] = $userID;//
+          $this->Flash->success('Login correcto');
+          return $this->redirect(['controller' => 'pelicula']);
         }
           $this->Flash->error('Login Incorrecto');
       }
@@ -140,7 +142,7 @@ class UsersController extends AppController
 
     //ANTES DEL FILTRO
     public function beforeFilter($event){
-      $this->Auth->allow(['register']); //Paginas a las que puede ingresar sin login
+      $this->Auth->allow(['register','pelicula']); //Paginas a las que puede ingresar sin login
     }
 
 //NAVEGACION A DIFERENTES VENTANAS DEL ADMINITRADOR

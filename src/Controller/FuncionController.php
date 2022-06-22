@@ -40,6 +40,45 @@ class FuncionController extends AppController
         ]);
 
         $this->set(compact('funcion'));
+
+        $nomPel = $funcion->pelicula->nombre;
+        $_SESSION['nomPel'] = $nomPel;
+
+        $horaF = $funcion->horario->hora;
+        $_SESSION['horaF'] = $horaF;
+
+        $funcionID = $funcion->id;
+        $_SESSION['funcionID'] = $funcionID;
+
+
+    }
+
+
+
+
+     public function calcularPremio(){
+      date_default_timezone_set("America/Bogota");
+      //HORA PELICULA
+      $dt = $funcion->horario->hora;
+      $hora = (int)substr($dt, 0, 2);
+      $min = (int)substr($dt, 3,-3);
+
+      //HORA ACTUAL
+      $date = new DateTime();
+      $cdt = $date->format('h:i:sa');
+      $chora = (int)substr($cdt, 0, 2);
+      $cmin = (int)substr($cdt, 3,-5);
+
+      if($hora==$chora){
+          if($cmin<=$min){
+            //echo("Aplica a Nachos con Queso");
+            $this->Flash->success('Login correcto');
+          }
+      }else{
+        //echo("GRACIAS POR ELEGIRNOS!");
+        $this->Flash->success('Login NO correcto');
+      }
+
     }
 
     /**
@@ -111,4 +150,7 @@ class FuncionController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+
+
 }

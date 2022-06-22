@@ -22,9 +22,9 @@
                 <?php foreach ($funcion as $funcion): ?>
                 <tr>
                     <td><?= $this->Number->format($funcion->id) ?></td>
-                    <td><?= $funcion->has('pelicula') ? $this->Html->link($funcion->pelicula->id, ['controller' => 'Pelicula', 'action' => 'view', $funcion->pelicula->id]) : '' ?></td>
+                    <td><?= $funcion->has('pelicula') ? $this->Html->link($funcion->pelicula->nombre, ['controller' => 'Pelicula', 'action' => 'view', $funcion->pelicula->id]) : '' ?></td>
                     <td><?= $funcion->has('sala') ? $this->Html->link($funcion->sala->id, ['controller' => 'Sala', 'action' => 'view', $funcion->sala->id]) : '' ?></td>
-                    <td><?= $funcion->has('horario') ? $this->Html->link($funcion->horario->id, ['controller' => 'Horario', 'action' => 'view', $funcion->horario->id]) : '' ?></td>
+                    <td><?= $funcion->has('horario') ? $this->Html->link($funcion->horario->hora, ['controller' => 'Horario', 'action' => 'view', $funcion->horario->id]) : '' ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $funcion->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $funcion->id]) ?>

@@ -62,6 +62,12 @@ class PeliculaTable extends Table
     public function validationDefault(Validator $validator): Validator
     {
         $validator
+            ->scalar('tumbnail')
+            ->maxLength('tumbnail', 512)
+            ->requirePresence('tumbnail', 'create')
+            ->notEmptyString('tumbnail');
+
+        $validator
             ->scalar('nombre')
             ->maxLength('nombre', 50)
             ->requirePresence('nombre', 'create')

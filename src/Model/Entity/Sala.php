@@ -10,6 +10,7 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property int $asientos
+ * @property int $asientos_vendidos
  */
 class Sala extends Entity
 {
@@ -24,5 +25,6 @@ class Sala extends Entity
      */
     protected $_accessible = [
         'asientos' => true,
+        'asientos_vendidos' => true,
     ];
 }

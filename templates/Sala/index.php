@@ -13,6 +13,7 @@
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
                     <th><?= $this->Paginator->sort('asientos') ?></th>
+                    <th><?= $this->Paginator->sort('asientos_vendidos') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -21,6 +22,7 @@
                 <tr>
                     <td><?= $this->Number->format($sala->id) ?></td>
                     <td><?= $this->Number->format($sala->asientos) ?></td>
+                    <td><?= $this->Number->format($sala->asientos_vendidos) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $sala->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $sala->id]) ?>

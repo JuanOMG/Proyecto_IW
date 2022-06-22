@@ -40,6 +40,10 @@ class SalaTable extends Table
         $this->setTable('sala');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
+
+        $this->hasMany('Funcion', [
+            'foreignKey' => 'sala_id',
+        ]);
     }
 
     /**
@@ -54,6 +58,11 @@ class SalaTable extends Table
             ->integer('asientos')
             ->requirePresence('asientos', 'create')
             ->notEmptyString('asientos');
+
+        $validator
+            ->integer('asientos_vendidos')
+            ->requirePresence('asientos_vendidos', 'create')
+            ->notEmptyString('asientos_vendidos');
 
         return $validator;
     }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Funcion $funcion
@@ -16,11 +17,11 @@
     </aside>
     <div class="column-responsive column-80">
         <div class="funcion view content">
-            <h3><?= h($funcion->id) ?></h3>
+
             <table>
                 <tr>
                     <th><?= __('Pelicula') ?></th>
-                    <td><?= $funcion->has('pelicula') ? $this->Html->link($funcion->pelicula->id, ['controller' => 'Pelicula', 'action' => 'view', $funcion->pelicula->id]) : '' ?></td>
+                    <td><?= $funcion->has('pelicula') ? $this->Html->link($funcion->pelicula->nombre, ['controller' => 'Pelicula', 'action' => 'view', $funcion->pelicula->id]) : '' ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Sala') ?></th>
@@ -28,13 +29,58 @@
                 </tr>
                 <tr>
                     <th><?= __('Horario') ?></th>
-                    <td><?= $funcion->has('horario') ? $this->Html->link($funcion->horario->id, ['controller' => 'Horario', 'action' => 'view', $funcion->horario->id]) : '' ?></td>
+               <td><?= $funcion->has('horario') ? $this->Html->link($funcion->horario->hora, ['controller' => 'Horario', 'action' => 'view', $funcion->horario->id]) : '' ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Id') ?></th>
-                    <td><?= $this->Number->format($funcion->id) ?></td>
+                  <!--     <th><?= __('Id') ?></th>-->
+                  <!--     <td><?= $this->Number->format($funcion->id) ?></td>-->
                 </tr>
             </table>
+
+            <?php
+
+
+
+            date_default_timezone_set("America/Bogota");
+            //HORA PELICULA
+            $dt = $funcion->horario->hora;
+            $hora = (int)substr($dt, 0, 2);
+            $min = (int)substr($dt, 3,-3);
+
+            //HORA ACTUAL
+            $date = new DateTime();
+            $cdt = $date->format('h:i:sa');
+            $chora = (int)substr($cdt, 0, 2);
+            $cmin = (int)substr($cdt, 3,-5);
+
+
+$prems = $_SESSION['prems'];
+
+
+
+  $premio = $prems[rand(0,(count($prems)-1))];
+            if($hora==$chora){
+                if($cmin<=$min){
+
+                  echo "<br><h4>".$premio."</h4>" ;
+                }else{
+                    $premio = "NINGUNO";
+                  echo "<br><h4>GRACIAS POR ELEGIRNOS!</h4>";
+                }
+            }else{
+                $premio = "NINGUNO";
+              echo "<br><h4>GRACIAS POR ELEGIRNOS!</h4>";
+            }
+
+            $_SESSION['premio'] = $premio;
+
+            ?>
+
+            <br>
+
+  <?=$this->Html->link('Comprar',['controller' => 'factura','action' => 'add']);?>
+
+
         </div>
     </div>
 </div>

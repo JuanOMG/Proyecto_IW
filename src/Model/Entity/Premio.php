@@ -6,18 +6,12 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Pelicula Entity
+ * Premio Entity
  *
  * @property int $id
- * @property string $tumbnail
  * @property string $nombre
- * @property string $descripcion
- * @property int $categoria_id
- *
- * @property \App\Model\Entity\Categorium $categorium
- * @property \App\Model\Entity\Funcion[] $funcion
  */
-class Pelicula extends Entity
+class Premio extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -29,11 +23,6 @@ class Pelicula extends Entity
      * @var array<string, bool>
      */
     protected $_accessible = [
-        'tumbnail' => true,
         'nombre' => true,
-        'descripcion' => true,
-        'categoria_id' => true,
-        'categorium' => true,
-        'funcion' => true,
     ];
 }

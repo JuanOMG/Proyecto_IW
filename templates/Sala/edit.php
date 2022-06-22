@@ -23,6 +23,7 @@
                 <legend><?= __('Edit Sala') ?></legend>
                 <?php
                     echo $this->Form->control('asientos');
+                    echo $this->Form->control('asientos_vendidos');
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

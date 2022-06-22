@@ -6,16 +6,16 @@ namespace App\Test\Fixture;
 use Cake\TestSuite\Fixture\TestFixture;
 
 /**
- * PeliculaFixture
+ * FacturaFixture
  */
-class PeliculaFixture extends TestFixture
+class FacturaFixture extends TestFixture
 {
     /**
      * Table name
      *
      * @var string
      */
-    public $table = 'pelicula';
+    public $table = 'factura';
     /**
      * Init method
      *
@@ -26,10 +26,10 @@ class PeliculaFixture extends TestFixture
         $this->records = [
             [
                 'id' => 1,
-                'tumbnail' => 'Lorem ipsum dolor sit amet',
-                'nombre' => 'Lorem ipsum dolor sit amet',
-                'descripcion' => 'Lorem ipsum dolor sit amet',
-                'categoria_id' => 1,
+                'user_id' => 1,
+                'funcion_id' => 1,
+                'precio' => 1,
+                'beneficio' => 'Lorem ipsum dolor sit amet',
             ],
         ];
         parent::init();

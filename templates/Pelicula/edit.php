@@ -23,6 +23,7 @@
             <fieldset>
                 <legend><?= __('Edit Pelicula') ?></legend>
                 <?php
+                    echo $this->Form->control('tumbnail');
                     echo $this->Form->control('nombre');
                     echo $this->Form->control('descripcion');
                     echo $this->Form->control('categoria_id', ['options' => $categoria]);

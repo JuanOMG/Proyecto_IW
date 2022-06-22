@@ -26,6 +26,10 @@
                     <th><?= __('Asientos') ?></th>
                     <td><?= $this->Number->format($sala->asientos) ?></td>
                 </tr>
+                <tr>
+                    <th><?= __('Asientos Vendidos') ?></th>
+                    <td><?= $this->Number->format($sala->asientos_vendidos) ?></td>
+                </tr>
             </table>
         </div>
     </div>
